@@ -1,11 +1,14 @@
 package zoo.springbasic.order;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import zoo.springbasic.discount.DiscountPolicy;
 import zoo.springbasic.discount.FixDiscountPolicy;
 import zoo.springbasic.member.Member;
 import zoo.springbasic.member.MemberRepository;
 import zoo.springbasic.member.MemoryMemberRepository;
 
+@Component
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -15,6 +18,7 @@ public class OrderServiceImpl implements OrderService {
         return memberRepository;
     }
 
+    @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
