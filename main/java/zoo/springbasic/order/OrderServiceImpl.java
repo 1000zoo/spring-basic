@@ -1,5 +1,6 @@
 package zoo.springbasic.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import zoo.springbasic.discount.DiscountPolicy;
@@ -7,6 +8,7 @@ import zoo.springbasic.member.Member;
 import zoo.springbasic.member.MemberRepository;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
@@ -14,12 +16,6 @@ public class OrderServiceImpl implements OrderService {
 
     public MemberRepository getMemberRepository() {
         return memberRepository;
-    }
-
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
     }
 
     @Override
