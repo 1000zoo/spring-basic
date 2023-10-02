@@ -1,10 +1,12 @@
 package zoo.springbasic.discount;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import zoo.springbasic.member.Grade;
 import zoo.springbasic.member.Member;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy{
     private int discountPercent = 10;
 

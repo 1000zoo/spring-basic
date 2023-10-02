@@ -2,6 +2,7 @@ package zoo.springbasic.order;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import zoo.springbasic.discount.DiscountPolicy;
 import zoo.springbasic.member.Member;
