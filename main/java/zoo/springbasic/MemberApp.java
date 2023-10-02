@@ -5,8 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import zoo.springbasic.member.Grade;
 import zoo.springbasic.member.Member;
 import zoo.springbasic.member.MemberService;
-import zoo.springbasic.member.MemberServiceImpl;
-import zoo.springbasic.order.OrderService;
 
 public class MemberApp {
 

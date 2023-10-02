@@ -1,12 +1,10 @@
 package zoo.springbasic.singleton;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import zoo.springbasic.AppConfig;
-import zoo.springbasic.member.MemberService;
+import zoo.springbasic.AutoAppConfig;
 import zoo.springbasic.member.MemberServiceImpl;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,10 +35,10 @@ public class SingletonTest {
     @Test
     @DisplayName("싱글톤 컨테이너 테스트")
     void singletonContainerTest() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
-        MemberServiceImpl memberService1 = ac.getBean("memberService", MemberServiceImpl.class);
-        MemberServiceImpl memberService2 = ac.getBean("memberService", MemberServiceImpl.class);
+        MemberServiceImpl memberService1 = ac.getBean(MemberServiceImpl.class);
+        MemberServiceImpl memberService2 = ac.getBean(MemberServiceImpl.class);
 
         assertThat(memberService1).isSameAs(memberService2);
     }

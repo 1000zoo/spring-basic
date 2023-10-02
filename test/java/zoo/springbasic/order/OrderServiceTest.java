@@ -5,11 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import zoo.springbasic.AppConfig;
+import zoo.springbasic.AutoAppConfig;
 import zoo.springbasic.member.Grade;
 import zoo.springbasic.member.Member;
 import zoo.springbasic.member.MemberService;
-import zoo.springbasic.member.MemberServiceImpl;
 
 public class OrderServiceTest {
 
@@ -18,9 +17,9 @@ public class OrderServiceTest {
 
     @BeforeEach
     public void beforeEach() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        memberService = ac.getBean("memberService", MemberService.class);
-        orderService = ac.getBean("orderService", OrderService.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        memberService = ac.getBean(MemberService.class);
+        orderService = ac.getBean(OrderService.class);
     }
 
     @Test

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import zoo.springbasic.AppConfig;
+import zoo.springbasic.AutoAppConfig;
 
 public class MemberServiceTest {
 
@@ -13,8 +13,8 @@ public class MemberServiceTest {
 
     @BeforeEach
     void beforeEach() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
-        memberService = ac.getBean("memberService", MemberService.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+        memberService = ac.getBean(MemberService.class);
     }
 
     @Test
